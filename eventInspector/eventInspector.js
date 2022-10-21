@@ -16,8 +16,8 @@ var eventInspector;
     document.getElementById("div0").addEventListener("keyup", logInfo);
     document.getElementById("div1").addEventListener("keyup", logInfo);
     function setInfoBox(_event) {
-        PositionX = _event.x;
-        PositionY = _event.y;
+        PositionX = _event.x + 10;
+        PositionY = _event.y + 10;
         document.getElementById("span").innerHTML = "x Position:" + PositionX + ", y Position:" + PositionY;
         document.getElementById("span").style.left = _event.x + "px";
         document.getElementById("span").style.top = _event.y + "px";
