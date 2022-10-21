@@ -1,6 +1,6 @@
 //Emily Jung 27727
-var EventInspector;
-(function (EventInspector) {
+var eventInspector;
+(function (eventInspector) {
     let PositionX;
     let PositionY;
     window.addEventListener("load", handleLoad);
@@ -28,5 +28,5 @@ var EventInspector;
         console.log("type event: " + _event.type);
         console.log(_event);
     }
-})(EventInspector || (EventInspector = {}));
+})(eventInspector || (eventInspector = {}));
 //# sourceMappingURL=eventInspector.js.map

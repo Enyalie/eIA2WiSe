@@ -1,6 +1,6 @@
 //Emily Jung 27727
 
-namespace EventInspector{
+namespace eventInspector{
 
     let PositionX: number;
     let PositionY: number;
@@ -24,8 +24,8 @@ document.getElementById("div0").addEventListener("keyup", logInfo);
 document.getElementById("div1").addEventListener("keyup", logInfo); 
 
 function setInfoBox(_event: MouseEvent): void {
-    PositionX = _event.x;
-    PositionY = _event.y;
+    PositionX = _event.x+10;
+    PositionY = _event.y+10;
     
     document.getElementById("span").innerHTML = "x Position:" + PositionX + ", y Position:" + PositionY;
         
