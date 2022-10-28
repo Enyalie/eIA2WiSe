@@ -8,6 +8,8 @@ var eventInspector;
         document.addEventListener("mousemove", setInfoBox);
         document.addEventListener("click", logInfo);
         document.addEventListener("keyup", logInfo);
+        document.querySelector("#button").addEventListener("click", custom);
+        document.addEventListener("customEvent", logInfo);
     }
     document.body.addEventListener("click", logInfo);
     document.body.addEventListener("keyup", logInfo);
@@ -27,6 +29,11 @@ var eventInspector;
         console.log("Target: " + _event.target);
         console.log("type event: " + _event.type);
         console.log(_event);
+    }
+    function custom(_event) {
+        let newEvent = new CustomEvent("customEvent", { bubbles: true });
+        let button = document.querySelector("#button");
+        button.dispatchEvent(newEvent);
     }
 })(eventInspector || (eventInspector = {}));
 //# sourceMappingURL=eventInspector.js.map

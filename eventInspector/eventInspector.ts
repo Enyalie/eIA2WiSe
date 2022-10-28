@@ -12,6 +12,9 @@ function handleLoad(): void {
     document.addEventListener("mousemove", setInfoBox);
     document.addEventListener("click", logInfo); 
     document.addEventListener("keyup", logInfo);
+
+    document.querySelector("#button").addEventListener("click", custom);
+         document.addEventListener("customEvent", logInfo);
 }
 
 document.body.addEventListener("click", logInfo);
@@ -37,5 +40,12 @@ function logInfo(_event: Event): void {
     console.log("Target: " + _event.target);
     console.log("type event: " + _event.type);
     console.log(_event);
+}
+
+function custom(_event: MouseEvent): void {
+    let newEvent: CustomEvent = new CustomEvent("customEvent", {bubbles: true});
+    let button: HTMLElement = document.querySelector("#button");
+    button.dispatchEvent(newEvent);
+
 }
 }
